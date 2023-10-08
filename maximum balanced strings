@@ -1,0 +1,35 @@
+ #include <iostream>
+#include <string>
+
+std::string maxBalancedEncapsulatedStrings(const std::string& s) {
+    std::string result;
+    int balance = 0;
+    std::string currentSubstring;
+
+    for (char c : s) {
+        currentSubstring += c;
+        if (c == 'L') {
+            balance++;
+        } else {
+            balance--;
+        }
+
+        if (balance == 0) {
+            result += "(" + currentSubstring + ")";
+            currentSubstring = "";
+        }
+    }
+
+    return result;
+}
+
+int main() {
+    std::string s;
+    std::cin >> s;
+
+    std::string result = maxBalancedEncapsulatedStrings(s);
+    std::cout << result << std::endl;
+
+    return 0;
+}
+                  
