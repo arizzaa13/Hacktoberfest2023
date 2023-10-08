@@ -1,0 +1,24 @@
+ #include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int fullRowsOfStaircase(int n) {
+    // Calculate the number of rows using the quadratic formula
+    // n = (k * (k + 1)) / 2
+    // Solve for k using the quadratic formula: k = (-1 + sqrt(1 + 8 * n)) / 2
+    double k = (-1 + sqrt(1 + 8.0 * n)) / 2.0;
+    
+    // Convert k to an integer and return it
+    return static_cast<int>(k);
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    int result = fullRowsOfStaircase(n);
+    cout << result << endl;
+
+    return 0;
+}
